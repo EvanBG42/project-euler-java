@@ -10,8 +10,23 @@ package problems1to50;
 public class Problem4 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// Largest product of two 3-digit nums is 6 digits
+		// 999 * 999 == 998001
+		System.out.println(isNumPalindrome(3002));
 
+	}
+	
+	public static boolean isNumPalindrome(int n){
+		boolean palindrome = true;
+		String nStr = Integer.toString(n);
+		
+		// FIXME: palindrome checker
+		for (int i = nStr.length()-1; i <= 0; i--){
+			if (nStr.charAt(i) != nStr.charAt(i - nStr.length())){
+				palindrome = false;
+			}
+		}
+		return palindrome;
 	}
 
 }

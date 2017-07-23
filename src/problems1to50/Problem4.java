@@ -14,7 +14,13 @@ public class Problem4 {
 	public static void main(String[] args) {
 		// Largest product of two 3-digit nums is 6 digits
 		// 999 * 999 == 998001
-		System.out.println(isNumPalindrome(1234));
+		int product = 0;
+		
+		for (int i = 999; isNumPalindrome(product) != true; i--){
+			for (int j = 999; isNumPalindrome(product) != true; i--){
+				product = i * j;
+			}
+		}
 
 	}
 	

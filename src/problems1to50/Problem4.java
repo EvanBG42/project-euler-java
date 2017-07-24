@@ -7,7 +7,7 @@
 
 package problems1to50;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Problem4 {
 
@@ -15,12 +15,27 @@ public class Problem4 {
 		// Largest product of two 3-digit nums is 6 digits
 		// 999 * 999 == 998001
 		int product = 0;
+		ArrayList<Integer> products = new ArrayList<Integer>();
 		
-		for (int i = 999; isNumPalindrome(product) != true; i--){
-			for (int j = 999; isNumPalindrome(product) != true; i--){
-				product = i * j;
+		
+		//System.out.println(x + " * " + y + " = " + x*y);
+		
+		for (int x = 999; x > 100; x--){
+			for (int y = 999; y > 100; y--){
+				if (isNumPalindrome(x * y)){
+					//System.out.println(x * y);
+					products.add(x * y);
+					break;
+				}
+				else {
+					continue;
+				}
 			}
 		}
+		
+		Collections.sort(products);
+		System.out.println(products.get(products.size()-1));
+		
 
 	}
 	
@@ -37,5 +52,4 @@ public class Problem4 {
 		}
 		return palindrome;
 	}
-
 }

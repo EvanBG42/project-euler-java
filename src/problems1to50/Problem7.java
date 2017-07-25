@@ -15,8 +15,10 @@ public class Problem7 {
 	public static boolean[] sieveEratosthenes(int n){
 		boolean[] nums = new boolean[n + 1];
 		
-		// Set all but the first element to true
-		Arrays.fill(boolean[] nums, true);
+		// Set all but zero and one element to true
+		Arrays.fill(nums, true);
+		nums[0] = false;
+		nums[1] = false;
 		
 		return nums;
 	}

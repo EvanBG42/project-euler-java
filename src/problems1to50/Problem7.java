@@ -7,18 +7,25 @@ package problems1to50;
 import java.util.Arrays;
 
 public class Problem7 {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		// Ya boi is gonna implement the Sieve of Eratosthenes
 		//boolean[] nums;
+		
+		sieveOfEratosthenes(10001);
+		
 	}
 	
-	public static boolean[] sieveEratosthenes(int n){
+	public static boolean[] sieveOfEratosthenes(int n){
 		boolean[] nums = new boolean[n + 1];
 		
-		// Set all but zero and one element to true
+		// Set all but the zero and one element to true
 		Arrays.fill(nums, true);
 		nums[0] = false;
 		nums[1] = false;
+		
+		for (int i = 2; i < (10001 / 2); i++) {
+			
+		}
 		
 		return nums;
 	}

@@ -5,19 +5,27 @@
  */
 
 // 10,001st PRIME, NOT PRIME CLOSEST TO 10,001!!!
+
+// I present to you: the least efficient way to do this
 package problems1to50;
 import java.util.Arrays;
 
 public class Problem7 {
 	public static void main(String[] args) {
 		// Ya boi is gonna implement the Sieve of Eratosthenes
-		// boolean[] nums;
 		
-		boolean primes[] = sieveOfEratosthenes(10001);
+		boolean primes[] = sieveOfEratosthenes(1000000);
+		int numOfPrimes = 0;
 		
 		for (int i = 0; i < primes.length; i++) {
 			if (primes[i] == true) {
 				System.out.println(i);
+				numOfPrimes++;
+				
+				if (numOfPrimes == 10001) {
+					System.out.println(i);
+					break;
+				}
 			}
 		}
 	}
@@ -33,15 +41,15 @@ public class Problem7 {
 		nums[1] = false;
 		
 		// Just do a while loop ya doofus
-		while (currentNum < (10001 / 2)) {
+		while (currentNum < (nums.length / 2)) {
 			if (nums[currentNum] == false) {
 				currentNum += 1;
 				continue;
 			}
 			else {
 				// i is gonna be the number to multiply currentNum by
-				for (int i = 2; i < 10001; i++) {
-					if (currentNum * i > 10001) {
+				for (int i = 2; i < nums.length; i++) {
+					if (currentNum * i > nums.length-1) {
 						break;
 					}
 					else {

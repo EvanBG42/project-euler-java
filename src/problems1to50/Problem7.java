@@ -9,24 +9,41 @@ import java.util.Arrays;
 public class Problem7 {
 	public static void main(String[] args) {
 		// Ya boi is gonna implement the Sieve of Eratosthenes
-		//boolean[] nums;
+		// boolean[] nums;
 		
 		sieveOfEratosthenes(10001);
 		
 	}
 	
 	public static boolean[] sieveOfEratosthenes(int n){
+		// n + 1 to account for arrays starting at 0
 		boolean[] nums = new boolean[n + 1];
+		int numOfPrimes = 0;
 		
 		// Set all but the zero and one element to true
 		Arrays.fill(nums, true);
 		nums[0] = false;
 		nums[1] = false;
 		
-		for (int i = 2; i < (10001 / 2); i++) {
-			
+		// Var for running total of primes, subtract when num is flipped below
+		for (boolean num: nums) {
+			if (num) {
+				numOfPrimes += 1;
+			}
 		}
 		
+		/*
+		for (int i = 2; i < (10001 / 2); i++) {
+			if (nums[i] == false) continue;
+			else {
+				for (int x = i; x < 10001; x=x*i) {
+					
+				}
+			}
+		}
+		*/
+		
+		// Just do a while loop ya doofus
 		return nums;
 	}
 }

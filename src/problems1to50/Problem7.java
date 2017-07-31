@@ -19,13 +19,15 @@ public class Problem7 {
 		// n + 1 to account for arrays starting at 0
 		boolean[] nums = new boolean[n + 1];
 		int numOfPrimes = 0;
+		int currentNum = 2;
+		int flipper;
 		
 		// Set all but the zero and one element to true
 		Arrays.fill(nums, true);
 		nums[0] = false;
 		nums[1] = false;
 		
-		// Var for running total of primes, subtract when num is flipped below
+		// Var for running total of primes, subtract when num is flipped in while loop
 		for (boolean num: nums) {
 			if (num) {
 				numOfPrimes += 1;
@@ -44,6 +46,17 @@ public class Problem7 {
 		*/
 		
 		// Just do a while loop ya doofus
+		while (currentNum < (10001 / 2)) {
+			if (nums[currentNum] == false) {
+				currentNum += 1;
+				continue;
+			}
+			else {
+				//
+			}
+			
+			currentNum += 1;
+		}
 		return nums;
 	}
 }

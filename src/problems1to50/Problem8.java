@@ -46,11 +46,12 @@ public class Problem8 {
 				//System.out.println(bigNum);
 		
 		// i is starting pos for consecutive numbers
-		for (int i = 0; i < bigNum.length()-12; i++) {
+		for (int i = 0; i < bigNum.length() - 14; i++) {
 			runningProd = 1;
 			
-			for (int n = i; n < i + 12; n++) {
+			for (int n = i; n < i + 13; n++) {
 				runningProd = runningProd * Integer.valueOf(bigNum.substring(n, n + 1));
+				if (runningProd == 0) break;
 			}
 			
 			if (runningProd > greatestProd) {
@@ -60,7 +61,7 @@ public class Problem8 {
 		}
 		
 		// I realize this variable name is way too long. Oh well.
-		for (int n = greatestProdStartPos; n < greatestProdStartPos + 12; n++) {
+		for (int n = greatestProdStartPos; n < greatestProdStartPos + 13; n++) {
 			System.out.print(bigNum.charAt(n) + " x ");
 		}
 		

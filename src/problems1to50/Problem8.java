@@ -50,7 +50,7 @@ public class Problem8 {
 			runningProd = 1;
 			
 			for (int n = i; n < i + 12; n++) {
-				runningProd = runningProd * (int)bigNum.charAt(n);
+				runningProd = runningProd * Integer.valueOf(bigNum.substring(n, n + 1));
 			}
 			
 			if (runningProd > greatestProd) {

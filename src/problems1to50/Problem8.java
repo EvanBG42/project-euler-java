@@ -6,9 +6,15 @@
 
 package problems1to50;
 
+import java.util.Arrays;
+
 public class Problem8 {
 
 	public static void main(String[] args) {
+		int greatestProd = 0;
+		int runningProd = 1;
+		int greatestProdStartPos = 0;
+		//Integer[] consecNums = new Integer[13];
 		
 		// What can hold a 1000 digit num?
 		String bigNum = "7316717653133062491922511967442657"
@@ -39,9 +45,28 @@ public class Problem8 {
 				
 				//System.out.println(bigNum);
 		
-		for (int i = 0; i < bigNum.length()-13; i++) {
+		// i is starting pos for consecutive numbers
+		for (int i = 0; i < bigNum.length()-12; i++) {
+			runningProd = 1;
 			
+			for (int n = i; n < i + 12; n++) {
+				runningProd = runningProd * (int)bigNum.charAt(n);
+			}
+			
+			if (runningProd > greatestProd) {
+				greatestProd = runningProd;
+				greatestProdStartPos = i;
+			}
 		}
+		
+		// I realize this variable name is way too long. Oh well.
+		for (int n = greatestProdStartPos; n < greatestProdStartPos + 12; n++) {
+			System.out.print(bigNum.charAt(n) + " x ");
+		}
+		
+		System.out.print("= ");
+		System.out.println(greatestProd);
+		
 	}
 
 }
